@@ -1,7 +1,5 @@
 package com.easyway.employeemanagement.controller;
 
-import java.net.http.HttpResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,7 +27,7 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("api/employees")
 @Validated
-@CrossOrigin(origins = "easyway-mocha.vercel.app") 
+@CrossOrigin(origins = "https://easyway-mocha.vercel.app") 
 public class EmployeeController {
 
 	@Autowired
