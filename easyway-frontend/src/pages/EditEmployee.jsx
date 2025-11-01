@@ -8,7 +8,7 @@ export default function EditEmployee() {
   const [emp, setEmp] = useState({ name: "", email: "", department: "" , salary: ""});
 
   useEffect(() => {
-    API.get(`/employees/${id}`).then((res) => setEmp(res.data));
+    API.get(`/api/employees/${id}`).then((res) => setEmp(res.data));
   }, [id]);
 
   const handleChange = (e) =>
@@ -16,7 +16,7 @@ export default function EditEmployee() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    API.put(`/employees/${id}`, emp)
+    API.put(`/api/employees/${id}`, emp)
       .then(() => navigate("/"))
       .catch((err) => console.error(err));
   };

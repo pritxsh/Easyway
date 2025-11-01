@@ -7,7 +7,7 @@ export default function ViewEmployee() {
   const [emp, setEmp] = useState(null);
 
   useEffect(() => {
-    API.get(`/employees/${id}`).then((res) => setEmp(res.data));
+    API.get(`/api/employees/${id}`).then((res) => setEmp(res.data));
   }, [id]);
 
   if (!emp) return <p className="text-center mt-8">Loading...</p>;

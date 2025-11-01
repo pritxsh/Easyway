@@ -6,14 +6,14 @@ export default function EmployeeList() {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    API.get("/employees")
+    API.get("/api/employees")
       .then((res) => setEmployees(res.data.content || res.data))
       .catch((err) => console.error(err));
   }, []);
 
   const deleteEmployee = (id) => {
     if (confirm("Delete this employee?")) {
-      API.delete(`/employees/${id}`).then(() => {
+      API.delete(`/api/employees/${id}`).then(() => {
         setEmployees(employees.filter((e) => e.id !== id));
       });
     }

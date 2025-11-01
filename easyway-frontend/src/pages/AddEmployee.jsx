@@ -11,7 +11,7 @@ export default function AddEmployee() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    API.post("/employees", emp)
+    API.post("/api/employees", emp)
       .then(() => navigate("/"))
       .catch((err) => console.error(err));
   };
