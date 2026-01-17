@@ -1,7 +1,7 @@
 import axios from 'axios';
 import useAuthStore from './authStore';
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'https://easyway-backend-wgmy.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,

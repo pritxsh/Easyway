@@ -25,10 +25,9 @@ import com.easyway.employeemanagement.service.EmployeeService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("api/employees")
+@RequestMapping("/employees")
 @Validated
-//@CrossOrigin(origins = "https://easyway-mocha.vercel.app") 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://easyway-frontend-bxyo.onrender.com")
 public class EmployeeController {
 
 	@Autowired
