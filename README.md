@@ -227,8 +227,6 @@ The project uses GitHub Actions for continuous integration and deployment:
 8. **Deploy to Render**: Auto-deploys on push to main branch
 
 ### Triggered On
-- Push to `main` branch
-- Pull requests to `main` branch
 - Manual workflow dispatch
 
 ## Deployment
