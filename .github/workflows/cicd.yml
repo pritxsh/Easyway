@@ -42,10 +42,20 @@ jobs:
 
       # ===== SONARCLOUD =====
 
-      - name: SonarCloud Scan
+      - name: SonarCloud Frontend Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: easyway-frontend
+
+      - name: SonarCloud Backend Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+         projectBaseDir: easyway-backend
+
 
       # ===== DOCKER =====
 
