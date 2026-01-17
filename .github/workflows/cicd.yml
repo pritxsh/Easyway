@@ -52,6 +52,13 @@ jobs:
       - name: SonarCloud Backend Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: easyway-backend
+
+      - name: SonarCloud Backend Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
          projectBaseDir: easyway-backend
