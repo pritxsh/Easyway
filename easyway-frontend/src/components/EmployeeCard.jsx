@@ -9,7 +9,13 @@ export default function EmployeeCard({ emp, onDelete }) {
 
       <div className="flex space-x-2">
         <Link
-          to={`/edit/${emp.id}`}
+          to={`/employees/${emp.id}/view`}
+          className="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded"
+        >
+          View
+        </Link>
+        <Link
+          to={`/employees/${emp.id}/edit`}
           className="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded"
         >
           Edit

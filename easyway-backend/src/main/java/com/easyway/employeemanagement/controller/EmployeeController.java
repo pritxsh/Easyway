@@ -27,7 +27,8 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("api/employees")
 @Validated
-@CrossOrigin(origins = "https://easyway-mocha.vercel.app") 
+//@CrossOrigin(origins = "https://easyway-mocha.vercel.app") 
+@CrossOrigin(origins = "http://localhost:5173")
 public class EmployeeController {
 
 	@Autowired

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import API from "../services/api";
+import { getEmployee, updateEmployee } from "../services/api";
 
 export default function EditEmployee() {
   const { id } = useParams();
@@ -8,7 +8,7 @@ export default function EditEmployee() {
   const [emp, setEmp] = useState({ name: "", email: "", department: "" , salary: ""});
 
   useEffect(() => {
-    API.get(`/api/employees/${id}`).then((res) => setEmp(res.data));
+    getEmployee(id).then((res) => setEmp(res.data));
   }, [id]);
 
   const handleChange = (e) =>
@@ -16,8 +16,8 @@ export default function EditEmployee() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    API.put(`/api/employees/${id}`, emp)
-      .then(() => navigate("/"))
+    updateEmployee(id, emp)
+      .then(() => navigate("/employees"))
       .catch((err) => console.error(err));
   };
 

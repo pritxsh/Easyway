@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import API from "../services/api";
+import { getEmployees, deleteEmployee as deleteEmployeeAPI } from "../services/api";
 import EmployeeCard from "../components/EmployeeCard";
 
 export default function EmployeeList() {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    API.get("/api/employees")
+    getEmployees()
       .then((res) => setEmployees(res.data.content || res.data))
       .catch((err) => console.error(err));
   }, []);
 
   const deleteEmployee = (id) => {
     if (confirm("Delete this employee?")) {
-      API.delete(`/api/employees/${id}`).then(() => {
+      deleteEmployeeAPI(id).then(() => {
         setEmployees(employees.filter((e) => e.id !== id));
       });
     }

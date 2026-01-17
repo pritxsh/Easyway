@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import API from "../services/api";
+import { getEmployee } from "../services/api";
 
 export default function ViewEmployee() {
   const { id } = useParams();
   const [emp, setEmp] = useState(null);
 
   useEffect(() => {
-    API.get(`/api/employees/${id}`).then((res) => setEmp(res.data));
+    getEmployee(id).then((res) => setEmp(res.data));
   }, [id]);
 
   if (!emp) return <p className="text-center mt-8">Loading...</p>;
@@ -19,7 +19,7 @@ export default function ViewEmployee() {
       <p>Department: {emp.department}</p>
 
       <Link
-        to="/"
+        to="/employees"
         className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
       >
         Back

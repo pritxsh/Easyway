@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../services/api";
+import { createEmployee } from "../services/api";
 
 export default function AddEmployee() {
   const [emp, setEmp] = useState({ name: "", email: "", department: "", salary: "" });
@@ -11,8 +11,8 @@ export default function AddEmployee() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    API.post("/api/employees", emp)
-      .then(() => navigate("/"))
+    createEmployee(emp)
+      .then(() => navigate("/employees"))
       .catch((err) => console.error(err));
   };
 
